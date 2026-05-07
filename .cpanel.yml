@@ -1,6 +1,22 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/kasszdus/public_html/
-    - rsync -av --exclude='.git' --exclude='.cpanel.yml' /home/kasszdus/repositories/job/public/ $DEPLOYPATH
+    - export APPPATH=/home/kasszdus/nigat-jobs
+    - export PUBPATH=/home/kasszdus/public_html
+
+    # Deploy full Laravel app to private folder
+    - rsync -av --delete
+      --exclude='.git'
+      --exclude='.cpanel.yml'
+      --exclude='node_modules'
+      --exclude='public/hot'
+      /home/kasszdus/repositories/nigat-jobs/ $APPPATH/
+
+    # Copy public/ contents to public_html
+    - rsync -av --delete /home/kasszdus/repositories/nigat-jobs/public/ $PUBPATH/
+
+    # Fix storage & bootstrap/cache permissions
+    - chmod -R 775 $APPPATH/storage
+    - chmod -R 775 $APPPATH/bootstrap/cache
+
     - echo "Deployment complete!"
