@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/kasszdus/public_html/
+    - rsync -av --exclude='.git' --exclude='.cpanel.yml' /home/kasszdus/repositories/job/public/ $DEPLOYPATH
+    - echo "Deployment complete!"
