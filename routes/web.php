@@ -52,6 +52,7 @@ Route::post('/api/agent/jobs', function (Request $request) {
         'description'      => 'nullable|string',
         'apply_url'        => 'nullable|string|max:500',
         'apply_email'      => 'nullable|email|max:255',
+        'image'            => 'nullable|url|max:500',
         'source_url'       => 'nullable|url',
         'requirements'     => 'nullable|array',
         'responsibilities' => 'nullable|array',
@@ -75,6 +76,7 @@ Route::post('/api/agent/jobs', function (Request $request) {
         'description' => $data['description'] ?? null,
         'apply_url'   => $data['apply_url'] ?? null,
         'apply_email' => $data['apply_email'] ?? null,
+        'image'       => $data['image'] ?? null,
         'source_url'  => $data['source_url'] ?? null,
         'posted_at'   => now(),
     ]);

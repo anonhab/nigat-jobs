@@ -15,9 +15,10 @@
     <meta property="og:description" content="@yield('meta_desc', 'Nigat Jobs — Latest Ethiopian job vacancies updated daily.')">
     <meta property="og:url"         content="{{ url()->current() }}">
     <meta property="og:site_name"   content="Nigat Jobs">
+    <meta property="og:image"       content="@yield('og_image', asset('images/og-default.png'))">
 
     {{-- Twitter Card --}}
-    <meta name="twitter:card"        content="summary">
+    <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:title"       content="@yield('title', 'Nigat Jobs')">
     <meta name="twitter:description" content="@yield('meta_desc', 'Nigat Jobs — Latest Ethiopian job vacancies.')">
 
