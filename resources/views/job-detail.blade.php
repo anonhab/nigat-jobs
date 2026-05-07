@@ -116,6 +116,11 @@
             <i class="bi bi-arrow-left"></i> Back to Jobs
         </a>
         <h1>{{ $job->title }}</h1>
+        @if($job->position && $job->position !== $job->title)
+            <p style="opacity:.9;font-size:1.05rem;margin-top:.3rem;">
+                <i class="bi bi-briefcase me-1"></i>{{ $job->position }}
+            </p>
+        @endif
         @if($job->company)
             <p><i class="bi bi-building me-1"></i>{{ $job->company }}</p>
         @endif

@@ -53,6 +53,7 @@ Route::post('/api/agent/jobs', function (Request $request) {
 
     $data = $request->validate([
         'title'            => 'required|string|max:255',
+        'position'         => 'nullable|string|max:255',
         'company'          => 'nullable|string|max:255',
         'location'         => 'nullable|string|max:255',
         'type'             => 'nullable|string|max:100',
@@ -84,6 +85,7 @@ Route::post('/api/agent/jobs', function (Request $request) {
 
     $job = Job::create([
         'title'       => $data['title'],
+        'position'    => $data['position'] ?? null,
         'company'     => $data['company'] ?? null,
         'location'    => $data['location'] ?? null,
         'type'        => $data['type'] ?? 'Full Time',
