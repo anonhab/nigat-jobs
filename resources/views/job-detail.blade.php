@@ -354,8 +354,17 @@
                 <hr style="border-color:var(--border);margin:1.25rem 0;">
 
                 <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;font-weight:600;">Share this job</p>
-                <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank" class="btn-tg w-100 justify-content-center mb-2">
-                    <i class="fab fa-telegram"></i> @ethiojobsNigatJobsEt
+                @php
+                    $shareText = urlencode('💼 ' . $job->title . "\n🏢 " . ($job->company ?? '') . "\n\n📄 Full Details & Apply:");
+                    $shareUrl  = urlencode(route('jobs.show', $job->id));
+                @endphp
+                <a href="https://t.me/share/url?url={{ $shareUrl }}&text={{ $shareText }}"
+                   target="_blank" class="btn-tg w-100 justify-content-center mb-2">
+                    <i class="fab fa-telegram"></i> Share on Telegram
+                </a>
+                <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank"
+                   class="btn-outline-custom w-100 justify-content-center mb-2" style="font-size:.82rem;">
+                    <i class="fab fa-telegram me-1"></i> Join @ethiojobsNigatJobsEt
                 </a>
                 <a href="{{ route('jobs') }}" class="btn-outline-custom w-100 justify-content-center mt-1">
                     <i class="bi bi-grid me-1"></i> Browse More Jobs
