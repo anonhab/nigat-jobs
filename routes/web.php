@@ -64,9 +64,16 @@ Route::post('/api/agent/jobs', function (Request $request) {
         'benefits'         => 'nullable|array',
     ]);
 
-    // Skip duplicates
-    if (!empty($data['source_url']) && Job::where('source_url', $data['source_url'])->exists()) {
-        return response()->json(['status' => 'duplicate'], 200);
+    // Skip duplicates — return existing URL so agent can still post to TG
+    if (!empty($data['source_url'])) {
+        $existing = Job::where('source_url', $data['source_url'])->first();
+        if ($existing) {
+            return response()->json([
+                'status' => 'duplicate',
+                'job_id' => $existing->id,
+                'url'    => env('APP_URL') . '/jobs/' . $existing->id,
+            ], 200);
+        }
     }
 
     $job = Job::create([
