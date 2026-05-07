@@ -29,13 +29,23 @@
 
     {{-- Twitter Card --}}
     <meta name="twitter:card"        content="summary_large_image">
-    <meta name="twitter:site"        content="@ethiojobsNigatJobsEt">
+    <meta name="twitter:site"        content="@@ethiojobsNigatJobsEt">
     <meta name="twitter:title"       content="@yield('title', 'Nigat Jobs')">
     <meta name="twitter:description" content="@yield('meta_desc', 'Nigat Jobs — Latest Ethiopian job vacancies.')">
     <meta name="twitter:image"       content="@yield('og_image', asset('og-default.png'))">
 
-    {{-- JSON-LD: Organization --}}
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Nigat Jobs","url":"{{ config('app.url') }}","description":"Ethiopia's daily job board — latest vacancies from top companies.","sameAs":["https://t.me/ethiojobsNigatJobsEt"]}</script>
+    {{-- JSON-LD: Organization (use @php so @context/@type are not parsed as Blade directives) --}}
+    @php
+        $__orgSchema = json_encode([
+            '@context'    => 'https://schema.org',
+            '@type'       => 'Organization',
+            'name'        => 'Nigat Jobs',
+            'url'         => config('app.url'),
+            'description' => "Ethiopia's daily job board — latest vacancies from top companies.",
+            'sameAs'      => ['https://t.me/ethiojobsNigatJobsEt'],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    @endphp
+    <script type="application/ld+json">{!! $__orgSchema !!}</script>
     @stack('jsonld')
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
