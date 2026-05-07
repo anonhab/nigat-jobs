@@ -354,8 +354,8 @@
                 <hr style="border-color:var(--border);margin:1.25rem 0;">
 
                 <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;font-weight:600;">Share this job</p>
-                <a href="https://t.me/forgatjobstest" target="_blank" class="btn-tg w-100 justify-content-center mb-2">
-                    <i class="fab fa-telegram"></i> @forgatjobstest
+                <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank" class="btn-tg w-100 justify-content-center mb-2">
+                    <i class="fab fa-telegram"></i> @ethiojobsNigatJobsEt
                 </a>
                 <a href="{{ route('jobs') }}" class="btn-outline-custom w-100 justify-content-center mt-1">
                     <i class="bi bi-grid me-1"></i> Browse More Jobs
