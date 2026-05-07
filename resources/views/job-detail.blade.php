@@ -401,7 +401,7 @@
                 </a>
                 <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank"
                    class="btn-outline-custom w-100 justify-content-center mb-2" style="font-size:.82rem;">
-                    <i class="fab fa-telegram me-1"></i> Join @ethiojobsNigatJobsEt
+                    <i class="fab fa-telegram me-1"></i> Join @@ethiojobsNigatJobsEt
                 </a>
                 <a href="{{ route('jobs') }}" class="btn-outline-custom w-100 justify-content-center mt-1">
                     <i class="bi bi-grid me-1"></i> Browse More Jobs

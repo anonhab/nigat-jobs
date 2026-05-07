@@ -304,7 +304,7 @@
         <p>Join our channel and be the first to know about new vacancies</p>
         <div style="display:flex;justify-content:center;">
             <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank" class="btn-tg" style="font-size:1rem;padding:.75rem 2rem;">
-                <i class="fab fa-telegram"></i> Join @ethiojobsNigatJobsEt
+                <i class="fab fa-telegram"></i> Join @@ethiojobsNigatJobsEt
             </a>
         </div>
     </div>

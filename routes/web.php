@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
+// Temporary: visit /clear-views once after deploy to flush stale compiled views, then remove
+Route::get('/clear-views', function () {
+    \Illuminate\Support\Facades\Artisan::call('view:clear');
+    return 'Views cleared ✓ — delete this route now.';
+});
+
 Route::post('/signin', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/', [JobController::class, 'index'])->name('home');

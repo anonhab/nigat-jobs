@@ -16,7 +16,7 @@
         <p style="color:var(--muted);line-height:1.9;">
             Welcome to <strong style="color:var(--text);">Nigat Jobs</strong> ("we", "our", or "us"). We are committed to protecting your privacy.
             This Privacy Policy explains how we collect, use, and safeguard information when you visit our website
-            <strong style="color:var(--text);">nigatjobs.et</strong> and our Telegram channel <strong style="color:var(--text);">@ethiojobsNigatJobsEt</strong>.
+            <strong style="color:var(--text);">nigatjobs.et</strong> and our Telegram channel <strong style="color:var(--text);">@@ethiojobsNigatJobsEt</strong>.
         </p>
 
         <div class="section-heading">2. Information We Collect</div>
@@ -74,7 +74,7 @@
         <p style="color:var(--muted);line-height:1.9;">
             If you have questions about this Privacy Policy, please
             <a href="{{ route('contact') }}" style="color:var(--primary);">contact us</a> or reach us on Telegram at
-            <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank" style="color:var(--primary);">@ethiojobsNigatJobsEt</a>.
+            <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank" style="color:var(--primary);">@@ethiojobsNigatJobsEt</a>.
         </p>
     </div>
 </div>

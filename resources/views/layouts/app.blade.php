@@ -686,7 +686,7 @@
                 <p class="footer-heading">Join our Telegram</p>
                 <p style="font-size:.88rem;color:#94a3b8;line-height:1.7;">Get instant job alerts on Telegram before they fill up.</p>
                 <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank" class="btn-tg mt-2 d-inline-flex">
-                    <i class="fab fa-telegram"></i> @ethiojobsNigatJobsEt
+                    <i class="fab fa-telegram"></i> @@ethiojobsNigatJobsEt
                 </a>
             </div>
         </div>
