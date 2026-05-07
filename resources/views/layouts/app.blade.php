@@ -87,23 +87,37 @@
         .brand {
             display: flex;
             align-items: center;
-            gap: .6rem;
+            gap: .5rem;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.25rem;
+            font-weight: 800;
+            font-size: 1.35rem;
+            letter-spacing: -.5px;
             color: var(--text);
         }
         .brand-icon {
-            width: 38px; height: 38px;
-            background: var(--primary);
+            width: 36px; height: 36px;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
             border-radius: 10px;
             display: flex; align-items: center; justify-content: center;
             color: white;
-            font-weight: 800;
-            font-size: .95rem;
+            font-weight: 900;
+            font-size: .88rem;
             flex-shrink: 0;
+            letter-spacing: -.5px;
         }
-        .brand span { color: var(--primary); }
+        .brand-text {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .brand-text-jobs {
+            -webkit-text-fill-color: var(--text);
+            color: var(--text);
+            font-weight: 600;
+            font-size: 1.15rem;
+            opacity: .75;
+        }
 
         .nav-links {
             display: flex;
@@ -578,7 +592,7 @@
         <div class="nav-inner">
             <a href="{{ route('home') }}" class="brand">
                 <div class="brand-icon">NJ</div>
-                <span>Nigat<span> Jobs</span></span>
+                <span class="brand-text">Nigat</span><span class="brand-text-jobs">Jobs</span>
             </a>
 
             <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -614,7 +628,7 @@
             <div class="col-lg-4">
                 <div class="footer-brand">
                     <div class="brand-icon">NJ</div>
-                    Nigat Jobs
+                    <span style="background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Nigat</span><span style="opacity:.7;font-weight:600;"> Jobs</span>
                 </div>
                 <p class="footer-desc">Your daily source for Ethiopian job vacancies. We aggregate the latest opportunities so you never miss a chance.</p>
                 <div class="social-row">
