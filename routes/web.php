@@ -20,6 +20,11 @@ Route::get('/signup', [JobController::class, 'signup'])->name('signup');
 Route::post('/register', [JobController::class, 'register']);
 Route::get('/jobs', [JobController::class, 'jobs'])->name('jobs');
 Route::get('/jobs/{id}', [JobController::class, 'show'])->name('jobs.show');
+Route::get('/jobs/{id}/card.svg', function ($id) {
+    $job = \App\Models\Job::findOrFail($id);
+    $svg = view('partials.job-og-image', compact('job'))->render();
+    return response($svg, 200, ['Content-Type' => 'image/svg+xml', 'Cache-Control' => 'public, max-age=86400']);
+})->name('job.card.image');
 // Route to display the "Post a Job" form
 // This will match the user navigating to yoursite.com/jobs/create
 Route::get('/create', [JobController::class, 'create'])->name('create');

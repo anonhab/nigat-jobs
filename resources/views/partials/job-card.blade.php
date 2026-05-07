@@ -33,19 +33,14 @@
 @endphp
 
 <div class="card-job">
-    {{-- Image or accent bar --}}
-    @if($job->image)
-        <div style="height:140px;overflow:hidden;border-radius:14px 14px 0 0;position:relative;">
-            <img src="{{ $job->image }}" alt="{{ $job->title }}"
-                 style="width:100%;height:100%;object-fit:cover;display:block;">
-            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.45));"></div>
-            @if($isNew)
-                <span class="badge-new" style="position:absolute;top:.6rem;right:.6rem;">New</span>
-            @endif
-        </div>
-    @else
-        <div style="height:4px;background:{{ $accentColor }};border-radius:14px 14px 0 0;"></div>
-    @endif
+    {{-- Generated card image --}}
+    <div style="height:140px;overflow:hidden;border-radius:14px 14px 0 0;position:relative;">
+        <img src="{{ route('job.card.image', $job->id) }}" alt="{{ $job->title }}"
+             style="width:100%;height:100%;object-fit:cover;display:block;">
+        @if($isNew)
+            <span class="badge-new" style="position:absolute;top:.6rem;right:.6rem;">New</span>
+        @endif
+    </div>
 
     <div class="card-body-job">
 
@@ -66,9 +61,6 @@
                     @endif
                 </div>
             </div>
-            @if($isNew && !$job->image)
-                <span class="badge-new">New</span>
-            @endif
         </div>
 
         {{-- Job title --}}

@@ -2,7 +2,7 @@
 
 @section('title', $job->title . ' | Nigat Jobs')
 @section('meta_desc', Str::limit(strip_tags($job->description), 160))
-@if($job->image)@section('og_image', $job->image)@endif
+@section('og_image', route('job.card.image', $job->id))
 
 @push('head')
 <style>
