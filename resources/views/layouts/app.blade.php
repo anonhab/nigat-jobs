@@ -34,20 +34,7 @@
     <meta name="twitter:description" content="@yield('meta_desc', 'Nigat Jobs — Latest Ethiopian job vacancies.')">
     <meta name="twitter:image"       content="@yield('og_image', asset('og-default.png'))">
 
-    {{-- JSON-LD: Organization (use @php so @context/@type are not parsed as Blade directives) --}}
-    @php
-        $__orgSchema = json_encode([
-            '@context'    => 'https://schema.org',
-            '@type'       => 'Organization',
-            'name'        => 'Nigat Jobs',
-            'url'         => config('app.url'),
-            'description' => "Ethiopia's daily job board — latest vacancies from top companies.",
-            'sameAs'      => ['https://t.me/ethiojobsNigatJobsEt'],
-        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-    @endphp
-    <script type="application/ld+json">{!! $__orgSchema !!}</script>
-    @stack('jsonld')
-
+    {{-- CSS (before any dynamic blocks) --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -55,6 +42,10 @@
     {{-- Google AdSense --}}
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7852365660336296"
             crossorigin="anonymous"></script>
+
+    {{-- JSON-LD Organization schema (@@context/@@type escape @ so Blade ignores them) --}}
+    <script type="application/ld+json">{"@@context":"https://schema.org","@@type":"Organization","name":"Nigat Jobs","url":"{{ config('app.url') }}","description":"Ethiopia's daily job board.","sameAs":["https://t.me/ethiojobsNigatJobsEt"]}</script>
+    @stack('jsonld')
 
     <style>
         /* ── Variables ── */
