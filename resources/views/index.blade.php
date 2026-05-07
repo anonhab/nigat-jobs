@@ -214,14 +214,34 @@
             </div>
         </div>
 
-        {{-- Ad: Top of listings (leaderboard) --}}
-        @include('partials.ad', ['slot' => 'SLOT_TOP', 'format' => 'horizontal'])
+        {{-- Ad: Top of listings --}}
+        <div class="text-center mb-3">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-7852365660336296"
+                 data-ad-slot="auto"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
 
         <div class="row g-3">
             @forelse($jobs as $job)
             <div class="col-md-6 col-lg-4">
                 @include('partials.job-card', ['job' => $job])
             </div>
+            {{-- Ad: after every 6th job card --}}
+            @if($loop->iteration % 6 === 0 && !$loop->last)
+            <div class="col-12">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-7852365660336296"
+                     data-ad-slot="auto"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            @endif
             @empty
             <div class="col-12 empty-state">
                 <i class="bi bi-inbox d-block"></i>

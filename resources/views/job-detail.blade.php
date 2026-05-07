@@ -354,15 +354,21 @@
                 <hr style="border-color:var(--border);margin:1.25rem 0;">
 
                 <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem;font-weight:600;">Share this job</p>
-                <a href="https://t.me/for_sale89" target="_blank" class="btn-tg w-100 justify-content-center mb-2">
-                    <i class="fab fa-telegram"></i> @for_sale89
+                <a href="https://t.me/forgatjobstest" target="_blank" class="btn-tg w-100 justify-content-center mb-2">
+                    <i class="fab fa-telegram"></i> @forgatjobstest
                 </a>
                 <a href="{{ route('jobs') }}" class="btn-outline-custom w-100 justify-content-center mt-1">
                     <i class="bi bi-grid me-1"></i> Browse More Jobs
                 </a>
 
                 <div class="mt-3">
-                    @include('partials.ad', ['slot' => 'SLOT_DETAIL_SIDEBAR', 'format' => 'rectangle'])
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-7852365660336296"
+                         data-ad-slot="auto"
+                         data-ad-format="rectangle"
+                         data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
             </div>
         </div>
