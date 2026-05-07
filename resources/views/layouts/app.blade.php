@@ -3,24 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="@yield('meta_desc', 'Nigat Jobs — Latest Ethiopian job vacancies updated daily.')">
-    <title>@yield('title', 'Nigat Jobs | Find Your Career')</title>
+    <meta name="description" content="@yield('meta_desc', 'Nigat Jobs — Latest Ethiopian job vacancies updated daily. Find jobs in Ethiopia fast.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'Ethiopia jobs, Ethiopian job vacancies, jobs in Ethiopia, Addis Ababa jobs, job board Ethiopia, nigatjobs')">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Nigat Jobs">
+    <title>@yield('title', 'Nigat Jobs | Find Your Career in Ethiopia')</title>
 
     {{-- Canonical --}}
     <link rel="canonical" href="{{ url()->current() }}">
 
+    {{-- Favicon --}}
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="alternate icon" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    <meta name="theme-color" content="#2563eb">
+
     {{-- Open Graph --}}
     <meta property="og:type"        content="website">
-    <meta property="og:title"       content="@yield('title', 'Nigat Jobs | Find Your Career')">
+    <meta property="og:title"       content="@yield('title', 'Nigat Jobs | Find Your Career in Ethiopia')">
     <meta property="og:description" content="@yield('meta_desc', 'Nigat Jobs — Latest Ethiopian job vacancies updated daily.')">
     <meta property="og:url"         content="{{ url()->current() }}">
     <meta property="og:site_name"   content="Nigat Jobs">
-    <meta property="og:image"       content="@yield('og_image', asset('images/og-default.png'))">
+    <meta property="og:image"       content="@yield('og_image', asset('og-default.png'))">
+    <meta property="og:locale"      content="en_ET">
 
     {{-- Twitter Card --}}
     <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@ethiojobsNigatJobsEt">
     <meta name="twitter:title"       content="@yield('title', 'Nigat Jobs')">
     <meta name="twitter:description" content="@yield('meta_desc', 'Nigat Jobs — Latest Ethiopian job vacancies.')">
+    <meta name="twitter:image"       content="@yield('og_image', asset('og-default.png'))">
+
+    {{-- JSON-LD: Organization --}}
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Nigat Jobs","url":"{{ config('app.url') }}","description":"Ethiopia's daily job board — latest vacancies from top companies.","sameAs":["https://t.me/ethiojobsNigatJobsEt"]}</script>
+    @stack('jsonld')
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -605,7 +621,7 @@
                 <li><a href="{{ route('jobs') }}" class="{{ request()->routeIs('jobs') ? 'active' : '' }}">Browse Jobs</a></li>
                 <li><a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a></li>
                 <li>
-                    <a href="https://t.me/for_sale89" target="_blank" class="btn-tg">
+                    <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank" class="btn-tg">
                         <i class="fab fa-telegram"></i> Telegram
                     </a>
                 </li>
@@ -633,7 +649,7 @@
                 </div>
                 <p class="footer-desc">Your daily source for Ethiopian job vacancies. We aggregate the latest opportunities so you never miss a chance.</p>
                 <div class="social-row">
-                    <a href="https://t.me/for_sale89" target="_blank" class="social-btn" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank" class="social-btn" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
                     <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 </div>
@@ -659,8 +675,8 @@
             <div class="col-lg-3">
                 <p class="footer-heading">Join our Telegram</p>
                 <p style="font-size:.88rem;color:#94a3b8;line-height:1.7;">Get instant job alerts on Telegram before they fill up.</p>
-                <a href="https://t.me/for_sale89" target="_blank" class="btn-tg mt-2 d-inline-flex">
-                    <i class="fab fa-telegram"></i> @for_sale89
+                <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank" class="btn-tg mt-2 d-inline-flex">
+                    <i class="fab fa-telegram"></i> @ethiojobsNigatJobsEt
                 </a>
             </div>
         </div>

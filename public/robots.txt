@@ -1,2 +1,8 @@
 User-agent: *
-Disallow:
+Disallow: /admin
+Disallow: /api/
+Disallow: /signin
+Disallow: /signup
+Disallow: /botwebhook
+
+Sitemap: https://www.nigatjobs.com.et/sitemap.xml

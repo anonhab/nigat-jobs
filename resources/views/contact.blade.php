@@ -56,7 +56,7 @@
                     <div class="info-icon"><i class="fab fa-telegram"></i></div>
                     <div>
                         <div style="font-weight:700;color:var(--text);margin-bottom:.2rem;">Telegram Channel</div>
-                        <a href="https://t.me/for_sale89" target="_blank" style="color:var(--primary);text-decoration:none;font-size:.9rem;">@for_sale89</a>
+                        <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank" style="color:var(--primary);text-decoration:none;font-size:.9rem;">@ethiojobsNigatJobsEt</a>
                     </div>
                 </div>
                 <div class="info-item">

@@ -114,6 +114,38 @@ Route::post('/api/agent/jobs', function (Request $request) {
     ], 201);
 });
 
+// ── Sitemap ────────────────────────────────────────────────────────────────
+Route::get('/sitemap.xml', function () {
+    $jobs = Job::select('id', 'updated_at')->latest()->get();
+    $xml  = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+    $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+
+    // Static pages
+    foreach ([
+        ['/', '1.0', 'daily'],
+        ['/jobs', '0.9', 'daily'],
+        ['/about', '0.5', 'monthly'],
+        ['/contact', '0.5', 'monthly'],
+    ] as [$path, $priority, $freq]) {
+        $xml .= "  <url><loc>" . url($path) . "</loc>"
+              . "<changefreq>{$freq}</changefreq><priority>{$priority}</priority></url>\n";
+    }
+
+    // Job pages
+    foreach ($jobs as $job) {
+        $lastmod = $job->updated_at ? $job->updated_at->toAtomString() : now()->toAtomString();
+        $xml .= "  <url><loc>" . url("/jobs/{$job->id}") . "</loc>"
+              . "<lastmod>{$lastmod}</lastmod>"
+              . "<changefreq>weekly</changefreq><priority>0.8</priority></url>\n";
+    }
+
+    $xml .= '</urlset>';
+    return response($xml, 200, [
+        'Content-Type'  => 'application/xml',
+        'Cache-Control' => 'public, max-age=3600',
+    ]);
+});
+
 Route::post('/botwebhook', function (Request $request) {
 
     $update = $request->all();

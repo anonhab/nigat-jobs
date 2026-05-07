@@ -303,8 +303,8 @@
         <h2>Get Job Alerts on Telegram</h2>
         <p>Join our channel and be the first to know about new vacancies</p>
         <div style="display:flex;justify-content:center;">
-            <a href="https://t.me/for_sale89" target="_blank" class="btn-tg" style="font-size:1rem;padding:.75rem 2rem;">
-                <i class="fab fa-telegram"></i> Join @for_sale89
+            <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank" class="btn-tg" style="font-size:1rem;padding:.75rem 2rem;">
+                <i class="fab fa-telegram"></i> Join @ethiojobsNigatJobsEt
             </a>
         </div>
     </div>

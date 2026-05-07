@@ -1,8 +1,45 @@
 @extends('layouts.app')
 
-@section('title', $job->title . ' | Nigat Jobs')
-@section('meta_desc', Str::limit(strip_tags($job->description), 160))
+@section('title', ($job->title ?? 'Job Vacancy') . ' | Nigat Jobs')
+@section('meta_desc', Str::limit(strip_tags($job->description ?? ''), 160))
+@section('meta_keywords', ($job->title ?? '') . ', ' . ($job->company ?? '') . ', Ethiopia jobs, ' . ($job->location ?? '') . ' jobs')
 @section('og_image', route('job.card.image', $job->id))
+
+@push('jsonld')
+@php
+    $jld = [
+        '@context'    => 'https://schema.org',
+        '@type'       => 'JobPosting',
+        'title'       => $job->title ?? '',
+        'description' => strip_tags($job->description ?? ''),
+        'datePosted'  => optional($job->posted_at)->toDateString() ?? now()->toDateString(),
+        'jobLocation' => [
+            '@type'   => 'Place',
+            'address' => [
+                '@type'           => 'PostalAddress',
+                'addressCountry'  => 'ET',
+                'addressLocality' => $job->location ?? 'Ethiopia',
+            ],
+        ],
+        'hiringOrganization' => [
+            '@type' => 'Organization',
+            'name'  => $job->company ?? 'Not specified',
+        ],
+        'employmentType' => match(strtolower($job->type ?? '')) {
+            'full time'  => 'FULL_TIME',
+            'part time'  => 'PART_TIME',
+            'contract'   => 'CONTRACTOR',
+            'internship' => 'INTERN',
+            'remote'     => 'FULL_TIME',
+            default      => 'FULL_TIME',
+        },
+        'url' => route('jobs.show', $job->id),
+    ];
+    if ($job->deadline)  $jld['validThrough'] = $job->deadline;
+    if ($job->salary)    $jld['baseSalary']   = ['@type'=>'MonetaryAmount','currency'=>'ETB','value'=>$job->salary];
+@endphp
+<script type="application/ld+json">{!! json_encode($jld, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}</script>
+@endpush
 
 @push('head')
 <style>

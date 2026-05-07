@@ -97,8 +97,8 @@
     <div style="background:linear-gradient(135deg,var(--primary),#1e3a5f);border-radius:var(--radius);padding:2.5rem;text-align:center;color:white;">
         <h3 style="font-weight:800;margin-bottom:.5rem;">Get Alerts on Telegram</h3>
         <p style="opacity:.85;margin-bottom:1.5rem;">Join our channel and receive new job postings directly in your Telegram app</p>
-        <a href="https://t.me/for_sale89" target="_blank" class="btn-tg" style="font-size:1rem;padding:.75rem 2rem;">
-            <i class="fab fa-telegram"></i> Join @for_sale89
+        <a href="https://t.me/ethiojobsNigatJobsEt" target="_blank" class="btn-tg" style="font-size:1rem;padding:.75rem 2rem;">
+            <i class="fab fa-telegram"></i> Join @ethiojobsNigatJobsEt
         </a>
     </div>
 
