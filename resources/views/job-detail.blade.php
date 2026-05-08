@@ -374,7 +374,7 @@
             <div class="detail-surface" style="position:sticky;top:80px;">
                 <h5 style="font-weight:700;margin-bottom:1.25rem;color:var(--text);">Apply for this Job</h5>
 
-                @if($job->apply_url)
+                @if($job->apply_url && $job->apply_url !== $job->source_url)
                     <a href="{{ $job->apply_url }}" target="_blank" class="apply-big mb-3">
                         Apply Now <i class="bi bi-box-arrow-up-right ms-1"></i>
                     </a>
