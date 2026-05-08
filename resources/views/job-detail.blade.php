@@ -378,6 +378,10 @@
                     <a href="{{ $job->apply_url }}" target="_blank" class="apply-big mb-3">
                         Apply Now <i class="bi bi-box-arrow-up-right ms-1"></i>
                     </a>
+                @elseif($job->source_url)
+                    <a href="{{ $job->source_url }}" target="_blank" class="apply-big mb-3">
+                        View Original Posting <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    </a>
                 @endif
 
                 @if($job->apply_email)
